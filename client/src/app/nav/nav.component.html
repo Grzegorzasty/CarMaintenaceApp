@@ -1,22 +1,25 @@
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <div class="container"> 
-      <a class="navbar-brand" href="#">Car Maintenance App</a>
+      <a class="navbar-brand" routerLink='/' >CMApp</a>
         
-      <ul class="navbar-nav mr-auto" *ngIf="accountService.currentUser$ | async">
+      <ul class="navbar-nav mr-auto" >
+        <ng-container *ngIf="accountService.currentUser$ | async">
           <li class="nav-item">
-            <a class="nav-link" href="#">Cars</a>
+            <a class="nav-link" routerLink='/cars' routerLinkActive='active'>Cars</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Bikes</a>
+            <a class="nav-link" routerLink='/bikes' routerLinkActive='active'>Bikes</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Repairs</a>
+            <a class="nav-link" routerLink='/repairs' routerLinkActive='active'>Repairs</a>
           </li>
+        </ng-container>
+          
         </ul>
         
-        <div class="dropdown" *ngIf="accountService.currentUser$ | async" dropdown>
+        <div class="dropdown" *ngIf="(accountService.currentUser$ | async) as user" dropdown>
 
-          <a class="dropdown-toggle" dropdownToggle>Account</a>
+          <a class="dropdown-toggle" dropdownToggle>Welcome {{user.username | titlecase}}</a>
           
           <div class="dropdown-menu mt-3" *dropdownMenu>
             <a class="dropdown-item">Edit Profile</a>
