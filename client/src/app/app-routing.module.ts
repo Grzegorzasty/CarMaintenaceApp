@@ -4,6 +4,9 @@ import { BikeDetailComponent } from './bikes/bike-detail/bike-detail.component';
 import { BikeListComponent } from './bikes/bike-list/bike-list.component';
 import { CarDetailComponent } from './cars/car-detail/car-detail.component';
 import { CarListComponent } from './cars/car-list/car-list.component';
+import { NotFoundComponent } from './errors/not-found/not-found.component';
+import { ServerErrorComponent } from './errors/server-error/server-error.component';
+import { TestErrorsComponent } from './errors/test-errors/test-errors.component';
 import { HomeComponent } from './home/home.component';
 import { ListsComponent } from './lists/lists.component';
 import { RepairsComponent } from './repairs/repairs.component';
@@ -24,6 +27,9 @@ const routes: Routes = [
       {path: 'repairs', component: RepairsComponent},
     ]
   },
+  {path: 'errors', component: TestErrorsComponent},
+  {path: 'server-error', component: ServerErrorComponent},
+  {path: 'not-found', component: NotFoundComponent},
   {path: '**', component: HomeComponent, pathMatch: 'full'}
 ];
 

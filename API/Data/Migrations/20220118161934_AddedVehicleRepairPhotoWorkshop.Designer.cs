@@ -3,14 +3,16 @@ using System;
 using API.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace API.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20220118161934_AddedVehicleRepairPhotoWorkshop")]
+    partial class AddedVehicleRepairPhotoWorkshop
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -45,7 +47,7 @@ namespace API.Data.Migrations
                     b.Property<string>("PublicId")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("RepairId")
+                    b.Property<int?>("RepairId")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Url")
@@ -94,7 +96,7 @@ namespace API.Data.Migrations
                     b.Property<int>("PartsPrize")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("VehicleId")
+                    b.Property<int?>("VehicleId")
                         .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
@@ -110,7 +112,7 @@ namespace API.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("AppUserId")
+                    b.Property<int?>("AppUserId")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Description")
@@ -153,7 +155,7 @@ namespace API.Data.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("RepairId")
+                    b.Property<int?>("RepairId")
                         .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
@@ -165,46 +167,30 @@ namespace API.Data.Migrations
 
             modelBuilder.Entity("API.Entities.Photo", b =>
                 {
-                    b.HasOne("API.Entities.Repair", "Repair")
+                    b.HasOne("API.Entities.Repair", null)
                         .WithMany("Photos")
-                        .HasForeignKey("RepairId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Repair");
+                        .HasForeignKey("RepairId");
                 });
 
             modelBuilder.Entity("API.Entities.Repair", b =>
                 {
-                    b.HasOne("API.Entities.Vehicle", "Vehicle")
+                    b.HasOne("API.Entities.Vehicle", null)
                         .WithMany("Repairs")
-                        .HasForeignKey("VehicleId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Vehicle");
+                        .HasForeignKey("VehicleId");
                 });
 
             modelBuilder.Entity("API.Entities.Vehicle", b =>
                 {
-                    b.HasOne("API.Entities.AppUser", "AppUser")
+                    b.HasOne("API.Entities.AppUser", null)
                         .WithMany("Vehicles")
-                        .HasForeignKey("AppUserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("AppUser");
+                        .HasForeignKey("AppUserId");
                 });
 
             modelBuilder.Entity("API.Entities.Workshop", b =>
                 {
-                    b.HasOne("API.Entities.Repair", "Repair")
+                    b.HasOne("API.Entities.Repair", null)
                         .WithMany("Workshops")
-                        .HasForeignKey("RepairId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Repair");
+                        .HasForeignKey("RepairId");
                 });
 
             modelBuilder.Entity("API.Entities.AppUser", b =>
