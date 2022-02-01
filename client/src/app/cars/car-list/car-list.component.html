@@ -1,1 +1,4 @@
-<p>car-list works!</p>
+  <div *ngFor="let vehicle of vehicles" class="row">
+      <app-car-card [vehicle]="vehicle"></app-car-card>
+  </div>
+

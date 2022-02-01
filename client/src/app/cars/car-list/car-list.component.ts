@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { take } from 'rxjs/operators';
+import { User } from 'src/app/_models/user';
+import * as Vehicle from 'src/app/_models/vehicle';
+import { AccountService } from 'src/app/_services/account.service';
+import { VehiclesService } from 'src/app/_services/vehicles.service';
 
 @Component({
   selector: 'app-car-list',
@@ -6,10 +11,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./car-list.component.css']
 })
 export class CarListComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
+  
+  vehicles: Vehicle.Vehicle[];
+  user: User;
+  constructor(private accountService: AccountService, private vehiclesService: VehiclesService) 
+  {
+    this.accountService.currentUser$.pipe(take(1)).subscribe(user => this.user = user);
   }
 
+  ngOnInit(): void {
+    this.loadVehicles();
+  }
+
+  loadVehicles(){
+    this.vehiclesService.getVehicles(this.user.username).subscribe(vehicles => {this.vehicles = vehicles;})
+  }
 }

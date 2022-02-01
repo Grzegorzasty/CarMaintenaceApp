@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BikeDetailComponent } from './bikes/bike-detail/bike-detail.component';
 import { BikeListComponent } from './bikes/bike-list/bike-list.component';
-import { CarDetailComponent } from './cars/car-detail/car-detail.component';
+import { CarDetailComponent } from './cars/vehicle-detail/car-detail.component';
 import { CarListComponent } from './cars/car-list/car-list.component';
 import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { ServerErrorComponent } from './errors/server-error/server-error.component';
@@ -19,8 +19,8 @@ const routes: Routes = [
     runGuardsAndResolvers: 'always',
     canActivate: [AuthGuard],
     children: [
-      {path: 'cars', component: CarListComponent, canActivate: [AuthGuard]},
-      {path: 'cars/:id', component: CarDetailComponent},
+      {path: 'vehicles', component: CarListComponent, canActivate: [AuthGuard]},
+      {path: 'vehicles/details/:id', component: CarDetailComponent},
       {path: 'bikes', component: BikeListComponent},
       {path: 'bikes/:id', component: BikeDetailComponent},
       {path: 'lists', component: ListsComponent},
