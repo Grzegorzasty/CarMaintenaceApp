@@ -22,6 +22,16 @@ namespace API.Data
             _mapper = mapper;
         }
 
+        public void AddVehicle(Vehicle vehicle)
+        {
+            _context.Vehicle.Add(vehicle);
+        }
+
+        public void DeleteVehicle(Vehicle vehicle)
+        {
+            _context.Vehicle.Remove(vehicle);
+        }
+
         public async Task<VehicleDto> GetVehicleByIdAsync(int id)
         {
             return await _context.Vehicle.Where(x => x.Id == id).ProjectTo<VehicleDto>(_mapper.ConfigurationProvider).FirstOrDefaultAsync();
@@ -34,5 +44,9 @@ namespace API.Data
             .ToListAsync();
         }
 
+        public async Task<bool> SaveAllAsync()
+        {
+            return await _context.SaveChangesAsync() > 0;
+        }
     }
 }

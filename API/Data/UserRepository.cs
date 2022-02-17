@@ -22,11 +22,6 @@ namespace API.Data
             _mapper = mapper;
         }
 
-        public async Task<IEnumerable<AppUser>> GetUserByIdAsync(int id)
-        {
-            return await _context.Users.Include(p => p.Vehicles).Where(r => r.Id == id).ToListAsync();
-        }
-
         public async Task<bool> SaveAllAsync()
         {
             return await _context.SaveChangesAsync() > 0;
@@ -52,5 +47,16 @@ namespace API.Data
             .ProjectTo<MemberDto>(_mapper.ConfigurationProvider)
             .SingleOrDefaultAsync();            
         }
+
+        public async Task<AppUser> GetUserByIdAsync(int id)
+        {
+            return await _context.Users.FindAsync(id);
+        }
+
+        public async Task<AppUser> GetUserByUsernameAsync(string username)
+        {
+            AppUser user = await _context.Users.SingleOrDefaultAsync(x => x.UserName == username);
+            return user;
+        }
     }
-}
+}   

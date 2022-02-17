@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { ListsComponent } from './lists/lists.component';
 import { RepairsComponent } from './repairs/repairs.component';
 import { AuthGuard } from './_guards/auth.guard';
+import { AddVehicleComponent } from './cars/add-vehicle/add-vehicle.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -21,6 +22,7 @@ const routes: Routes = [
     children: [
       {path: 'vehicles', component: CarListComponent, canActivate: [AuthGuard]},
       {path: 'vehicles/details/:id', component: CarDetailComponent},
+      {path: 'vehicles/add', component: AddVehicleComponent},
       {path: 'bikes', component: BikeListComponent},
       {path: 'bikes/:id', component: BikeDetailComponent},
       {path: 'lists', component: ListsComponent},

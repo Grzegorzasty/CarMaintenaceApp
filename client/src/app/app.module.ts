@@ -24,6 +24,7 @@ import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { ServerErrorComponent } from './errors/server-error/server-error.component';
 import { CarCardComponent } from './cars/car-card/car-card.component';
 import { JwtInterceptor } from './_interceptors/jwt.interceptor';
+import { AddVehicleComponent } from './cars/add-vehicle/add-vehicle.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { JwtInterceptor } from './_interceptors/jwt.interceptor';
     TestErrorsComponent,
     NotFoundComponent,
     ServerErrorComponent,
-    CarCardComponent
+    CarCardComponent,
+    AddVehicleComponent
   ],
   imports: [
     BrowserModule,

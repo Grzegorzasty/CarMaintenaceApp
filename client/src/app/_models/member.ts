@@ -1,4 +1,4 @@
-import { Vehicle } from "./Vehicle";
+import { Vehicle } from "./vehicle";
 
 export interface Member {
     id: number;

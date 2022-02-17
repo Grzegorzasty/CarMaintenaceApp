@@ -1,4 +1,6 @@
   <div *ngFor="let vehicle of vehicles" class="row">
       <app-car-card [vehicle]="vehicle"></app-car-card>
   </div>
-
+  <div class="row">
+    <button class="btn" routerLink="/vehicles/add"><i class="fa fa-plus"></i></button>
+  </div>

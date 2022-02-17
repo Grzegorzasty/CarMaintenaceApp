@@ -1,0 +1,29 @@
+<form #newvehicleForm="ngForm" (ngSubmit)="addvehicle()" autocomplete="off">
+    <h2 class="text-center text-primary">ADD VEHICLE</h2>
+    <hr>
+    <div class="form-group">
+        <input type="text"class="form-control" name="Type" [(ngModel)] = "model.Type" placeholder="Type">
+    </div>
+    <div class="form-group">
+        <input type="text"class="form-control" name="Manufacturer" [(ngModel)] = "model.Manufacturer" placeholder="Manufacturer">
+    </div>
+    <div class="form-group">
+        <input type="text"class="form-control" name="Model" [(ngModel)] = "model.Model" placeholder="Model">
+    </div>
+    <div class="form-group">
+        <input type="number"class="form-control" name="YearOfProduction" [(ngModel)] = "model.YearOfProduction" placeholder="YearOfProduction">
+    </div>
+    <div class="form-group">
+        <input type="text"class="form-control" name="Vinnumber" [(ngModel)] = "model.VinNumber" placeholder="VinNumber">
+    </div>
+    <div class="form-group">
+        <input type="number"class="form-control" name="Purchaseprize" [(ngModel)] = "model.PurchasePrize" placeholder="PurchasePrize">
+    </div>
+    <div class="form-group">
+        <input type="text"class="form-control" name="Description" [(ngModel)] = "model.Description" placeholder="Description">
+    </div>
+    <div class="form-group text-center">
+        <button class="btn btn-success mr-2" type="submit">Add</button>
+
+    </div>
+</form>

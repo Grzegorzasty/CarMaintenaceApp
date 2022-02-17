@@ -9,6 +9,9 @@ namespace API.Interfaces
 {
     public interface IVehicleRepository
     {
+        void AddVehicle(Vehicle vehicle);
+        void DeleteVehicle(Vehicle vehicle);
+        Task<bool> SaveAllAsync();
         Task<IEnumerable<VehicleDto>> GetVehicleByUsernameAsync(string username);
         Task<VehicleDto> GetVehicleByIdAsync(int id);
     }
