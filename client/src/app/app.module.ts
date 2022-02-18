@@ -6,8 +6,7 @@ import { AppComponent } from './app.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavComponent } from './nav/nav.component';
-import { FormsModule } from '@angular/forms';
-import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { CarListComponent } from './cars/car-list/car-list.component';
@@ -16,7 +15,6 @@ import { ListsComponent } from './lists/lists.component';
 import { RepairsComponent } from './repairs/repairs.component';
 import { BikeListComponent } from './bikes/bike-list/bike-list.component';
 import { BikeDetailComponent } from './bikes/bike-detail/bike-detail.component';
-import { ToastrModule } from 'ngx-toastr';
 import { SharedModule } from './_modules/shared.module';
 import { TestErrorsComponent } from './errors/test-errors/test-errors.component';
 import { ErrorInterceptor } from './_interceptors/error.interceptor';
@@ -50,6 +48,7 @@ import { AddVehicleComponent } from './cars/add-vehicle/add-vehicle.component';
     HttpClientModule,
     BrowserAnimationsModule,
     FormsModule,
+    ReactiveFormsModule,
     SharedModule
   ],
   providers: [
