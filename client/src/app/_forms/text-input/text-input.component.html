@@ -17,4 +17,6 @@
     </div>
     
     <div *ngIf="ngControl.control.errors?.isMatching" class="invalid-feedback">Passwords do not match</div>
+
+    <div *ngIf="ngControl.control.errors?.isNumber" class="invalid-feedback">Value is not a number</div>
 </div>

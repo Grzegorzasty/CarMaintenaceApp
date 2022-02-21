@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AbstractControl, FormBuilder, FormGroup, ValidatorFn, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { take } from 'rxjs/operators';
 import { NewVehicle } from 'src/app/_models/newvehicle';
 import { User } from 'src/app/_models/user';
@@ -13,8 +15,10 @@ import { VehiclesService } from 'src/app/_services/vehicles.service';
 export class AddVehicleComponent implements OnInit {
   model: NewVehicle;
   user: User;
+  addVehicleForm: FormGroup;
+  validationErrors: string;
 
-  constructor(private accountService: AccountService, private vehicleService: VehiclesService)
+  constructor(private accountService: AccountService, private vehicleService: VehiclesService, private fb: FormBuilder, private router: Router)
   {
     this.model = {
       Type: '',
@@ -30,11 +34,26 @@ export class AddVehicleComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.initializeForm();
+  }
+
+  initializeForm(){
+    this.addVehicleForm = this.fb.group({
+      type: ['car'],
+      manufacturer: ['', Validators.required],
+      model: ['', Validators.required],
+      yearOfProduction: ['', Validators.required],
+      vinNumber: ['', [Validators.required, Validators.minLength(17), Validators.maxLength(17)]],
+      purchasePrize: ['', Validators.required],
+      description: ['', Validators.maxLength(200)],
+      appUserId: ['']
+    })
   }
 
   addvehicle(){
-    console.log(this.model);
-    this.model.AppUserId = this.user.id;
-    return this.vehicleService.addvehicle(this.model); 
+    this.addVehicleForm.value.appUserId = this.user.id;
+    console.log(this.addVehicleForm.value);
+    this.vehicleService.addvehicle(this.addVehicleForm.value); 
+    this.router.navigateByUrl('/vehicles');
   }
 }

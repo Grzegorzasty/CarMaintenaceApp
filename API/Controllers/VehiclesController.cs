@@ -28,23 +28,7 @@ namespace API.Controllers
         [HttpPost("add")]
         public async Task<ActionResult<VehicleDto>> CreateVehicle(AddVehicleDto addVehicleDto)
         {
-            //var user = await _userRepository.GetUserByIdAsync(addVehicleDto.AppUserId);
-            
             var vehicle = _mapper.Map<Vehicle>(addVehicleDto);
-            
-            
-            // var vehicle = new Vehicle
-            // {
-            //     AppUser = user,
-            //     AppUserId = user.Id,
-            //     Type = addVehicleDto.Type,
-            //     Manufacturer = addVehicleDto.Manufacturer,
-            //     Model = addVehicleDto.Model,
-            //     YearOfProduction = addVehicleDto.YearOfProduction,
-            //     VinNumber = addVehicleDto.VinNumber,
-            //     PurchasePrize = addVehicleDto.PurchasePrize,
-            //     Description = addVehicleDto.Description
-            // };
             
             _vehicleRepository.AddVehicle(vehicle);
             await _vehicleRepository.SaveAllAsync();

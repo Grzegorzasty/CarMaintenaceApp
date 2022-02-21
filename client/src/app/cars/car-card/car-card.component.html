@@ -1,6 +1,11 @@
 <div class="card mb-4">
     <div class="card-body p-1">
-        <h6 class="card-title text-center mb-1"><i class="fa fa-car mr-2"></i>
+        <h6 class="card-title text-center mb-1">
+            <i *ngIf="vehicle.type === 'car'" class="fa fa-car mr-2"></i>
+            <i *ngIf="vehicle.type === 'bike'" class="fa fa-motorcycle mr-2"></i>
+            <i *ngIf="vehicle.type === 'tractor'" class="fa-solid fa-tractor mr-2"></i>
+            <i *ngIf="vehicle.type === 'excavator'" class="fa fa-car mr-2"></i>
+            
             {{vehicle.manufacturer + " " + vehicle.model}}
         </h6>
     </div>
