@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { AbstractControl, FormControl, FormGroup, ValidatorFn, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormControl, FormGroup, ValidatorFn, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { AccountService } from '../_services/account.service';
 
@@ -11,20 +12,20 @@ import { AccountService } from '../_services/account.service';
 export class RegisterComponent implements OnInit {
   @Output() cancelRegister = new EventEmitter();
 
-  model: any = {};
   registerForm: FormGroup;
+  validationErrors: string[] = [];
 
-  constructor(private accountService: AccountService, private toastr: ToastrService) { }
+  constructor(private accountService: AccountService, private toastr: ToastrService, private fb: FormBuilder, private router: Router) { }
 
   ngOnInit(): void {
     this.initializeForm();
   }
 
   initializeForm(){
-    this.registerForm = new FormGroup({
-      username: new FormControl('', Validators.required),
-      password: new FormControl('', Validators.required),
-      confirmPassword: new FormControl('', [Validators.required, this.matchValues('password')])
+    this.registerForm = this.fb.group({
+      username: ['', Validators.required],
+      password: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(20)]],
+      confirmPassword: ['', [Validators.required, this.matchValues('password')]]
     })
     this.registerForm.controls.password.valueChanges.subscribe(() => {
       this.registerForm.controls.password.updateValueAndValidity();
@@ -39,16 +40,13 @@ export class RegisterComponent implements OnInit {
   }
   
   register(){
-    // this.accountService.register(this.model).subscribe(response =>{
-    //   console.log(response);
-    //   this.cancel();
-    // }, error => 
-    // {
-    //   console.log(error);
-    //   this.toastr.error(error.error);
-    // })
+    this.accountService.register(this.registerForm.value).subscribe(response =>{
+      this.router.navigateByUrl('/vehicles');
+    }, error => 
+    {
+      this.validationErrors = error;
+    })
 
-    console.log(this.registerForm.value)
   }
 
   cancel(){

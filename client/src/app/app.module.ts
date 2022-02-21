@@ -23,6 +23,8 @@ import { ServerErrorComponent } from './errors/server-error/server-error.compone
 import { CarCardComponent } from './cars/car-card/car-card.component';
 import { JwtInterceptor } from './_interceptors/jwt.interceptor';
 import { AddVehicleComponent } from './cars/add-vehicle/add-vehicle.component';
+import { TextInputComponent } from './_forms/text-input/text-input.component';
+import { DateInputComponent } from './_forms/date-input/date-input.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,9 @@ import { AddVehicleComponent } from './cars/add-vehicle/add-vehicle.component';
     NotFoundComponent,
     ServerErrorComponent,
     CarCardComponent,
-    AddVehicleComponent
+    AddVehicleComponent,
+    TextInputComponent,
+    DateInputComponent
   ],
   imports: [
     BrowserModule,
