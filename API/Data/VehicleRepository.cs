@@ -36,6 +36,10 @@ namespace API.Data
         {
             return await _context.Vehicle.Where(x => x.Id == id).ProjectTo<VehicleDto>(_mapper.ConfigurationProvider).FirstOrDefaultAsync();
         }
+        public async Task<VehicleDetailDto> GetVehicleDetailsByIdAsync(int id)
+        {
+            return await _context.Vehicle.Where(x => x.Id == id).ProjectTo<VehicleDetailDto>(_mapper.ConfigurationProvider).FirstOrDefaultAsync();
+        }
 
         public async Task<IEnumerable<VehicleDto>> GetVehicleByUsernameAsync(string username)
         {

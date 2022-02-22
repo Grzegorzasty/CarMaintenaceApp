@@ -5,6 +5,7 @@ import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { NewVehicle } from '../_models/newvehicle';
 import { Vehicle } from '../_models/vehicle';
+import { VehicleDetails } from '../_models/vehicle_detail';
 
 
 @Injectable({
@@ -23,6 +24,10 @@ export class VehiclesService {
   getVehicle(id: number)
   {
     return this.http.get<Vehicle>(this.baseUrl + 'vehicles/details/' + id);
+  }
+  getVehicleDetails(id: number)
+  {
+    return this.http.get<VehicleDetails>(this.baseUrl + 'vehicles/edit/' + id);
   }
   addvehicle(model: NewVehicle)
   {

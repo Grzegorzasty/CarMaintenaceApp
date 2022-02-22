@@ -14,5 +14,7 @@ namespace API.Interfaces
         Task<bool> SaveAllAsync();
         Task<IEnumerable<VehicleDto>> GetVehicleByUsernameAsync(string username);
         Task<VehicleDto> GetVehicleByIdAsync(int id);
+
+        Task<VehicleDetailDto> GetVehicleDetailsByIdAsync(int id);
     }
 }

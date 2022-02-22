@@ -46,10 +46,10 @@ namespace API.Controllers
             var vehicles = await _vehicleRepository.GetVehicleByUsernameAsync(username);    
             return Ok(vehicles);
         }
-        [HttpGet("details/{id}")]
-        public async Task<ActionResult<VehicleDto>> GetVehicle(int id)
+        [HttpGet("edit/{id}")]
+        public async Task<ActionResult<VehicleDetailDto>> GetVehicleDetails(int id)
         {
-            var vehicle = await _vehicleRepository.GetVehicleByIdAsync(id);
+            var vehicle = await _vehicleRepository.GetVehicleDetailsByIdAsync(id);
             return Ok(vehicle);
         }
     }

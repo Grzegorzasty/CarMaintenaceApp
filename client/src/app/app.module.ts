@@ -11,10 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { CarListComponent } from './cars/car-list/car-list.component';
 import { CarDetailComponent } from './cars/vehicle-detail/car-detail.component';
-import { ListsComponent } from './lists/lists.component';
 import { RepairsComponent } from './repairs/repairs.component';
-import { BikeListComponent } from './bikes/bike-list/bike-list.component';
-import { BikeDetailComponent } from './bikes/bike-detail/bike-detail.component';
 import { SharedModule } from './_modules/shared.module';
 import { TestErrorsComponent } from './errors/test-errors/test-errors.component';
 import { ErrorInterceptor } from './_interceptors/error.interceptor';
@@ -25,6 +22,7 @@ import { JwtInterceptor } from './_interceptors/jwt.interceptor';
 import { AddVehicleComponent } from './cars/add-vehicle/add-vehicle.component';
 import { TextInputComponent } from './_forms/text-input/text-input.component';
 import { DateInputComponent } from './_forms/date-input/date-input.component';
+import { VehicleEditComponent } from './cars/vehicle-edit/vehicle-edit.component';
 
 @NgModule({
   declarations: [
@@ -33,18 +31,15 @@ import { DateInputComponent } from './_forms/date-input/date-input.component';
     HomeComponent,
     RegisterComponent,
     CarListComponent,
-    CarDetailComponent,
-    ListsComponent,
     RepairsComponent,
-    BikeListComponent,
-    BikeDetailComponent,
     TestErrorsComponent,
     NotFoundComponent,
     ServerErrorComponent,
     CarCardComponent,
     AddVehicleComponent,
     TextInputComponent,
-    DateInputComponent
+    DateInputComponent,
+    VehicleEditComponent
   ],
   imports: [
     BrowserModule,
