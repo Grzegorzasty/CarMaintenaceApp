@@ -1,1 +1,9 @@
 <h1 *ngIf="vehicleDetails">{{vehicleDetails.manufacturer}}</h1>
+
+<form *ngIf="vehicleDetails" #editForm="ngForm" id="editForm" (ngSubmit)="updateVehicle()">
+        <label for="Manufacturer">Manufacturer: </label>
+        <input [(ngModel)]="vehicleDetails.manufacturer" type="text" name="Manufacturer" class="form-control mx-2">
+        <label for="Model">Model: </label>
+        <input [(ngModel)]="vehicleDetails.model" type="text" name="Model" class="form-control mx-2">
+
+</form>

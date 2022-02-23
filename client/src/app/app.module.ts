@@ -10,7 +10,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { CarListComponent } from './cars/car-list/car-list.component';
-import { CarDetailComponent } from './cars/vehicle-detail/car-detail.component';
 import { RepairsComponent } from './repairs/repairs.component';
 import { SharedModule } from './_modules/shared.module';
 import { TestErrorsComponent } from './errors/test-errors/test-errors.component';

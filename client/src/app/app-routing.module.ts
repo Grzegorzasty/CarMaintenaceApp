@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CarDetailComponent } from './cars/vehicle-detail/car-detail.component';
 import { CarListComponent } from './cars/car-list/car-list.component';
 import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { ServerErrorComponent } from './errors/server-error/server-error.component';
@@ -19,7 +18,6 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     children: [
       {path: 'vehicles', component: CarListComponent},
-      {path: 'vehicles/details/:id', component: CarDetailComponent},
       {path: 'vehicles/edit/:id', component: VehicleEditComponent},
       {path: 'vehicles/add', component: AddVehicleComponent},
       {path: 'repairs', component: RepairsComponent},

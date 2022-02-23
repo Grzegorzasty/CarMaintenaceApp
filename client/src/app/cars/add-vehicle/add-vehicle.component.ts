@@ -20,16 +20,6 @@ export class AddVehicleComponent implements OnInit {
 
   constructor(private accountService: AccountService, private vehicleService: VehiclesService, private fb: FormBuilder, private router: Router)
   {
-    this.model = {
-      Type: '',
-      Manufacturer: '',
-      Model: '',
-      YearOfProduction: undefined,
-      VinNumber: '',
-      PurchasePrize: undefined,
-      Description: '',
-      AppUserId: undefined
-    };
     this.accountService.currentUser$.pipe(take(1)).subscribe(user => this.user = user);
   }
 

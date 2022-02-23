@@ -1,4 +1,5 @@
-export interface NewVehicle {
+export interface VehicleDetails {
+    id: number;
     type: string;
     manufacturer: string;
     model: string;
@@ -6,5 +7,4 @@ export interface NewVehicle {
     vinNumber: string;
     purchasePrize: number;
     description: string;
-    appUserId: number;
 }
