@@ -16,5 +16,7 @@ namespace API.Interfaces
         Task<VehicleDto> GetVehicleByIdAsync(int id);
 
         Task<VehicleDetailDto> GetVehicleDetailsByIdAsync(int id);
+        Task<Vehicle> GetCleanVehicleByIdAsync(int id);
+        void Update(Vehicle vehicle);
     }
 }

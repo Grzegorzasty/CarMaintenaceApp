@@ -21,9 +21,9 @@ export class VehiclesService {
   {
      return this.http.get<Vehicle[]>(this.baseUrl + 'vehicles/' + username);    
   }
-  getVehicleDetails(id: number)
+  async getVehicleDetails(id: number)
   {
-    return this.http.get<VehicleDetails>(this.baseUrl + 'vehicles/edit/' + id);
+    return await this.http.get<VehicleDetails>(this.baseUrl + 'vehicles/edit/' + id).toPromise();
   }
   addvehicle(model: NewVehicle)
   {
@@ -33,5 +33,9 @@ export class VehiclesService {
           console.log(val);
       });
 
+  }
+  updateVehicle(vehicle: VehicleDetails){
+    console.log(vehicle);
+    return this.http.put(this.baseUrl + 'vehicles', vehicle);
   }
 }

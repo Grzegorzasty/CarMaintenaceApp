@@ -33,8 +33,8 @@ export class AddVehicleComponent implements OnInit {
       manufacturer: ['', Validators.required],
       model: ['', Validators.required],
       yearOfProduction: ['', Validators.required],
-      vinNumber: ['', [Validators.required, Validators.minLength(17), Validators.maxLength(17)]],
-      purchasePrize: ['', Validators.required],
+      vinNumber: ['', [Validators.minLength(17), Validators.maxLength(17)]],
+      purchasePrize: [''],
       description: ['', Validators.maxLength(200)],
       appUserId: ['']
     })

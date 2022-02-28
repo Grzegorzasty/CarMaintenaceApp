@@ -52,5 +52,18 @@ namespace API.Controllers
             var vehicle = await _vehicleRepository.GetVehicleDetailsByIdAsync(id);
             return Ok(vehicle);
         }
+        [HttpPut]
+        public async Task<ActionResult> UpdateVehicle(VehicleDetailDto vehicleDetailDto)
+        {
+            var vehicle = await _vehicleRepository.GetCleanVehicleByIdAsync(vehicleDetailDto.Id);
+            _mapper.Map(vehicleDetailDto, vehicle);
+            
+            _vehicleRepository.Update(vehicle);
+            
+            if(await _vehicleRepository.SaveAllAsync()) return NoContent();
+            
+            return BadRequest("Failed to update user");
+        }
+
     }
 }

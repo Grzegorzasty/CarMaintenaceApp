@@ -1,9 +1,72 @@
-<h1 *ngIf="vehicleDetails">{{vehicleDetails.manufacturer}}</h1>
-
-<form *ngIf="vehicleDetails" #editForm="ngForm" id="editForm" (ngSubmit)="updateVehicle()">
-        <label for="Manufacturer">Manufacturer: </label>
-        <input [(ngModel)]="vehicleDetails.manufacturer" type="text" name="Manufacturer" class="form-control mx-2">
-        <label for="Model">Model: </label>
-        <input [(ngModel)]="vehicleDetails.model" type="text" name="Model" class="form-control mx-2">
-
-</form>
+<form [formGroup]="editVehicleForm" *ngIf="editVehicleForm" (ngSubmit)="editVehicleForm.valid && updateVehicle()" autocomplete="off">
+        <h2 class="text-center text-primary">EDIT VEHICLE</h2>
+        <hr>
+        
+        <div class="form-group">
+            <label class="control-label" style="margin-right: 20px">Type of vehicle</label>
+            <label class="radio-inline">
+                <input type="radio" value='car' formControlName='type'> car
+            </label>
+            <label class="radio-inline">
+                <input type="radio" value='bike' formControlName='type' class="ml-3"> bike
+            </label>
+            <label class="radio-inline">
+                <input type="radio" value='tractor' formControlName='type' class="ml-3"> tractor
+            </label>
+            <label class="radio-inline">
+                <input type="radio" value='excavator' formControlName='type' class="ml-3"> excavator
+            </label>
+        </div>
+    
+        <app-text-input 
+            [formControl]='editVehicleForm.controls["manufacturer"]' 
+            [label]='"Manufacturer"'>
+        </app-text-input>
+        
+        <app-text-input 
+            [formControl]='editVehicleForm.controls["model"]' 
+            [label]='"Model"'>
+        </app-text-input>
+        
+        <app-text-input 
+            [formControl]='editVehicleForm.controls["yearOfProduction"]' 
+            [label]='"Year of production"'>
+        </app-text-input>
+    
+        <app-text-input [hidden]='vehicleDetails.type === "tractor" || vehicleDetails.type === "excavator" || vehicleDetails.type === "bike"'
+            [formControl]='editVehicleForm.controls["vinNumber"]' 
+            [label]='"VIN"'>
+        </app-text-input>
+    
+        <app-text-input 
+            [formControl]='editVehicleForm.controls["purchasePrize"]' 
+            [label]='"Purchase price"'
+            [type]='"number"'>
+        </app-text-input>
+    
+        <app-text-input 
+            [formControl]='editVehicleForm.controls["description"]' 
+            [label]='"Description"'>
+        </app-text-input>
+    
+        <!-- <div class="row" *ngIf="validationErrors.length > 0">
+            <ul>
+                <li *ngFor="let error of validationErrors">
+                    {{error}}
+                </li>
+            </ul>
+        </div> -->
+        <div class="alert alert-info" *ngIf="editVehicleForm.dirty">
+            <strong>Information: </strong> You have made changes. Any unsaved changes will be lost!
+        </div>
+        <div class="form-group text-center">
+        <button [disabled]='!editVehicleForm.valid || !editVehicleForm.dirty'
+            class="btn btn-success mr-2" 
+            type="submit">Save
+        </button>
+        
+        </div>
+        <div>
+            <p>{{editVehicleForm.status | json}}</p>
+        </div>
+    </form>

@@ -31,6 +31,9 @@ namespace API.Data
         {
             _context.Vehicle.Remove(vehicle);
         }
+        public async Task<Vehicle> GetCleanVehicleByIdAsync(int id){
+            return await _context.Vehicle.FindAsync(id);
+        }
 
         public async Task<VehicleDto> GetVehicleByIdAsync(int id)
         {
@@ -51,6 +54,10 @@ namespace API.Data
         public async Task<bool> SaveAllAsync()
         {
             return await _context.SaveChangesAsync() > 0;
+        }
+        public void Update(Vehicle vehicle)
+        {
+            _context.Entry(vehicle).State = EntityState.Modified;
         }
     }
 }
