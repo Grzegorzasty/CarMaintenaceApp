@@ -25,9 +25,9 @@ export class VehiclesService {
   {
     return await this.http.get<VehicleDetails>(this.baseUrl + 'vehicles/edit/' + id).toPromise();
   }
-  addvehicle(model: NewVehicle)
+  async addvehicle(model: NewVehicle)
   {
-    return this.http.post<NewVehicle>(this.baseUrl + 'vehicles/add', model)
+    return await this.http.post<NewVehicle>(this.baseUrl + 'vehicles/add', model)
     .subscribe(
       (val) => {
           console.log(val);
@@ -35,7 +35,11 @@ export class VehiclesService {
 
   }
   updateVehicle(vehicle: VehicleDetails){
-    console.log(vehicle);
     return this.http.put(this.baseUrl + 'vehicles', vehicle);
+  }
+  
+  deleteVehicle(id: number)
+  {
+    return this.http.delete(this.baseUrl + 'vehicles/delete/' + id);
   }
 }

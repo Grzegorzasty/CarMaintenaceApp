@@ -40,10 +40,10 @@ export class AddVehicleComponent implements OnInit {
     })
   }
 
-  addvehicle(){
+  async addvehicle(){
     this.addVehicleForm.value.appUserId = this.user.id;
     console.log(this.addVehicleForm.value);
-    this.vehicleService.addvehicle(this.addVehicleForm.value); 
+    await this.vehicleService.addvehicle(this.addVehicleForm.value); 
     this.router.navigateByUrl('/vehicles');
   }
 }

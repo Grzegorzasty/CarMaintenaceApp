@@ -49,4 +49,10 @@ export class VehicleEditComponent implements OnInit {
       this.editVehicleForm.reset(this.editVehicleForm.value);
     })
   }
+  deleteVehicle(){
+    this.vehicleService.deleteVehicle(this.vehicleDetails.id).subscribe(() => {
+      this.toastr.success('Vehicle deleted successfully');
+      this.router.navigateByUrl('/vehicles');
+    })
+  }
 }

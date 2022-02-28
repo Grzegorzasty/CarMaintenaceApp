@@ -57,13 +57,10 @@
         </ul>
     </div> -->
     <div class="form-group text-center">
-    <button [disabled]='!addVehicleForm.valid'
-        class="btn btn-success mr-2" 
-        type="submit">Add
-    </button>
+        <button [disabled]='!addVehicleForm.valid'
+            class="btn btn-success mr-2" 
+            type="submit">Add
+        </button>
+    </div>
     
-    </div>
-    <div>
-        <p>{{addVehicleForm.status | json}}</p>
-    </div>
 </form>
