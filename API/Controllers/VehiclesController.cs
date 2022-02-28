@@ -56,6 +56,7 @@ namespace API.Controllers
         public async Task<ActionResult> UpdateVehicle(VehicleDetailDto vehicleDetailDto)
         {
             var vehicle = await _vehicleRepository.GetCleanVehicleByIdAsync(vehicleDetailDto.Id);
+            
             _mapper.Map(vehicleDetailDto, vehicle);
             
             _vehicleRepository.Update(vehicle);
@@ -64,6 +65,19 @@ namespace API.Controllers
             
             return BadRequest("Failed to update user");
         }
+        [HttpDelete("delete/{id}")]
+        public async Task<ActionResult> DeleteVehicle(int id)
+        {
+            var vehicle = await _vehicleRepository.GetCleanVehicleByIdAsync(id);
+            
 
+            if(vehicle == null) return NotFound();
+
+            _vehicleRepository.DeleteVehicle(vehicle);
+            
+            if(await _vehicleRepository.SaveAllAsync()) return Ok();
+
+            return BadRequest("Failed to delete vehicle");
+        }
     }
 }

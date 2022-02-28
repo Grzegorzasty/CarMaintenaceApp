@@ -33,7 +33,7 @@
         [label]='"Year of production"'>
     </app-text-input>
 
-    <app-text-input 
+    <app-text-input [hidden]='addVehicleForm.value.type === "tractor" || addVehicleForm.value.type === "excavator" || addVehicleForm.value.type === "bike"'
         [formControl]='addVehicleForm.controls["vinNumber"]' 
         [label]='"VIN"'>
     </app-text-input>

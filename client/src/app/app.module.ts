@@ -22,6 +22,8 @@ import { AddVehicleComponent } from './cars/add-vehicle/add-vehicle.component';
 import { TextInputComponent } from './_forms/text-input/text-input.component';
 import { DateInputComponent } from './_forms/date-input/date-input.component';
 import { VehicleEditComponent } from './cars/vehicle-edit/vehicle-edit.component';
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { LoadingInterceptor } from './_interceptors/loading.interceptor';
 
 @NgModule({
   declarations: [
@@ -47,11 +49,13 @@ import { VehicleEditComponent } from './cars/vehicle-edit/vehicle-edit.component
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
-    SharedModule
+    SharedModule,
+    NgxSpinnerModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass:ErrorInterceptor, multi: true},
-    {provide: HTTP_INTERCEPTORS, useClass:JwtInterceptor, multi: true}
+    {provide: HTTP_INTERCEPTORS, useClass:JwtInterceptor, multi: true},
+    {provide: HTTP_INTERCEPTORS, useClass:LoadingInterceptor, multi: true}
   ],
   bootstrap: [AppComponent]
 })

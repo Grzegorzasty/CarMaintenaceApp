@@ -33,7 +33,7 @@
             [label]='"Year of production"'>
         </app-text-input>
     
-        <app-text-input [hidden]='vehicleDetails.type === "tractor" || vehicleDetails.type === "excavator" || vehicleDetails.type === "bike"'
+        <app-text-input [hidden]='editVehicleForm.value.type === "tractor" || editVehicleForm.value.type === "excavator" || editVehicleForm.value.type === "bike"'
             [formControl]='editVehicleForm.controls["vinNumber"]' 
             [label]='"VIN"'>
         </app-text-input>
@@ -60,13 +60,12 @@
             <strong>Information: </strong> You have made changes. Any unsaved changes will be lost!
         </div>
         <div class="form-group text-center">
-        <button [disabled]='!editVehicleForm.valid || !editVehicleForm.dirty'
-            class="btn btn-success mr-2" 
-            type="submit">Save
-        </button>
-        
+            <button [disabled]='!editVehicleForm.valid || !editVehicleForm.dirty'
+                class="btn btn-success mr-2" 
+                type="submit">Save
+            </button>
         </div>
         <div>
-            <p>{{editVehicleForm.status | json}}</p>
+            <button></button>
         </div>
     </form>
