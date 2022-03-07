@@ -15,6 +15,7 @@ namespace API.Extensions
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IVehicleRepository, VehicleRepository>();
             services.AddScoped<ITokenService, TokenService>();
+            services.AddScoped<IRepairRepository, RepairRepository>();
             services.AddAutoMapper(typeof(AutoMapperProfiles).Assembly);
             services.AddDbContext<DataContext>(options => 
             {

@@ -1,11 +1,13 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using API.Entities;
 
-namespace API.Entities
+namespace API.DTOs
 {
-    public class Repair
+    public class AddRepairDto
     {
-        public int Id { get; set; }
         public DateTime DateOfReceipt { get; set; }
         public int LaborPrize { get; set; }
         public int PartsPrize { get; set; }
@@ -25,10 +27,8 @@ namespace API.Entities
         public bool CoolantChange { get; set; }
         public string KeyWords { get; set; }
         public string Description { get; set; }
-        public Workshop Workshop { get; set; }
         public int WorkshopId { get; set; }
         public ICollection<Photo> Photos { get; set; }
-        public Vehicle Vehicle { get; set; }
         public int VehicleId { get; set; }
     }
 }

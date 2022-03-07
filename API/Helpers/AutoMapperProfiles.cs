@@ -17,6 +17,9 @@ namespace API.Helpers
             CreateMap<AddVehicleDto, Vehicle>();
             CreateMap<Vehicle, VehicleDetailDto>();
             CreateMap<VehicleDetailDto, Vehicle>();
+            CreateMap<AddRepairDto, Repair>();
+            CreateMap<Repair, RepairDto>();
+            CreateMap<Repair, RepairDetailsDto>();
         }
     }
 }
