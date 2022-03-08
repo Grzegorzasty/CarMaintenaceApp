@@ -25,13 +25,10 @@ namespace API.Controllers
         public async Task<ActionResult<RepairDto>> AddRepair(AddRepairDto addRepairDto)
         {
             var repair = _mapper.Map<Repair>(addRepairDto);
-            
             _repairRepository.AddRepair(repair);
             await _repairRepository.SaveAllAsync();
 
-            return new RepairDto{
-                KeyWords = addRepairDto.KeyWords
-            };
+            return NoContent(); 
         }
         [HttpDelete("delete/{id}")]
         public async Task<ActionResult> DeleteRepair(int id)

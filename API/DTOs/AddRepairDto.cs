@@ -8,27 +8,27 @@ namespace API.DTOs
 {
     public class AddRepairDto
     {
-        public DateTime DateOfReceipt { get; set; }
+        //public DateTime DateOfReceipt { get; set; } = DateTime.Now;
         public int LaborPrize { get; set; }
         public int PartsPrize { get; set; }
-        public bool EngineOilChange { get; set; }
-        public bool GearboxOilChange { get; set; }
-        public bool HydraulicOilChange { get; set; }
-        public bool EngineOilFilterChange { get; set; }
-        public bool GearboxOilFilterChange { get; set; }
-        public bool HydraulicOilFilterChange { get; set; }
-        public bool AirFilterChange { get; set; }
-        public bool CabinFilterChange { get; set; }
-        public bool FuelFilterChange { get; set; }
-        public bool BreakPadsChange { get; set; }
-        public bool BreakDiscsChange { get; set; }
-        public bool BreakFluidChange { get; set; }
-        public bool EngineCamChange { get; set; }
-        public bool CoolantChange { get; set; }
+        public bool EngineOilChange { get; set; } = false;
+        public bool GearboxOilChange { get; set; } = false;
+        public bool HydraulicOilChange { get; set; } = false;
+        public bool EngineOilFilterChange { get; set; } = false;
+        public bool GearboxOilFilterChange { get; set; } = false;
+        public bool HydraulicOilFilterChange { get; set; } = false;
+        public bool AirFilterChange { get; set; } = false;
+        public bool CabinFilterChange { get; set; } = false;
+        public bool FuelFilterChange { get; set; } = false;
+        public bool BreakPadsChange { get; set; } = false;
+        public bool BreakDiscsChange { get; set; } = false;
+        public bool BreakFluidChange { get; set; } = false;
+        public bool EngineCamChange { get; set; } = false;
+        public bool CoolantChange { get; set; } = false;
         public string KeyWords { get; set; }
         public string Description { get; set; }
-        public int WorkshopId { get; set; }
-        public ICollection<Photo> Photos { get; set; }
+        public string WorkshopName { get; set; }
         public int VehicleId { get; set; }
+       
     }
 }

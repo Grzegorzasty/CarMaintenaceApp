@@ -1,3 +1,3 @@
 -- SQLite
-INSERT INTO Vehicle (Id, AppUserId, Description, Manufacturer, Model, PurchasePrize, Type, VinNumber, YearOfProduction)
-VALUES ('6', '4', 'garbagex2', 'BMW', 'X1', '12345', 'car', 'asdfghjkllk', '2015');
+INSERT INTO Repair (LaborPrize, PartsPrize, EngineOilChange, GearboxOilChange, HydraulicOilChange, EngineOilFilterChange, GearboxOilFilterChange, HydraulicOilFilterChange, AirFilterChange, CabinFilterChange, FuelFilterChange, BreakPadsChange, BreakDiscsChange, BreakFluidChange, EngineCamChange, CoolantChange, KeyWords, Description, WorkshopName, VehicleId)
+VALUES ('1234', '1234', 'true', 'false','false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'iol', 'dsfsf', 'KMK', '4');

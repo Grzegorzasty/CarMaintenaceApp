@@ -28,6 +28,7 @@ namespace API.DTOs
         public bool CoolantChange { get; set; }
         public string KeyWords { get; set; }
         public string Description { get; set; }
+        public string WorkshopName { get; set; }
         public ICollection<Photo> Photos { get; set; }
     }
 }
