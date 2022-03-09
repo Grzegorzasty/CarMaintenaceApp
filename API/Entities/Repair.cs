@@ -6,6 +6,7 @@ namespace API.Entities
     public class Repair
     {
         public int Id { get; set; }
+        public DateTime Date { get; set; } = DateTime.Now;
         public int LaborPrize { get; set; }
         public int PartsPrize { get; set; }
         public bool EngineOilChange { get; set; }

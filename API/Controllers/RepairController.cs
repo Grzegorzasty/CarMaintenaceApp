@@ -28,7 +28,7 @@ namespace API.Controllers
             _repairRepository.AddRepair(repair);
             await _repairRepository.SaveAllAsync();
 
-            return NoContent(); 
+            return NoContent();  
         }
         [HttpDelete("delete/{id}")]
         public async Task<ActionResult> DeleteRepair(int id)
@@ -57,6 +57,17 @@ namespace API.Controllers
             
             return BadRequest("Failed to update repair");
         }
-
+        [HttpGet("{id}")]
+        public async Task<ActionResult<RepairDetailsDto>> GetRepairDetailsByIdAsync(int id)
+        {
+            var repair = await _repairRepository.GetRepairDetailsByIdAsync(id);
+            return Ok(repair);
+        }
+        [HttpGet("vehicle/{id}")]
+        public async Task<ActionResult<RepairDto>> GetRepairByVehicleIdAsync(int id)
+        {
+            var repairs = await _repairRepository.GetRepairsByVehicleIdAsync(id);
+            return Ok(repairs);
+        }
     }
 }
