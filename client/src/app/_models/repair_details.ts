@@ -1,0 +1,23 @@
+export interface RepairDetails{
+    id: number,
+    dateOfReceipt: Date,
+    laborPrize: number,
+    partsPrize: number,
+    engineOilChange: boolean,
+    gearboxOilChange: boolean,
+    hydraulicOilChange: boolean,
+    engineOilFilterChange: boolean,
+    gearboxOilFilterChange: boolean,
+    hydraulicOilFilterChange: boolean,
+    airFilterChange: boolean,
+    cabinFilterChange: boolean,
+    fuelFilterChange: boolean,
+    breakPadsChange: boolean,
+    breakDiscsChange: boolean,
+    breakFluidChange: boolean,
+    engineCamChange: boolean,
+    coolantChange: boolean,
+    keyWords: string,
+    description: string,
+    workshopName: string
+}

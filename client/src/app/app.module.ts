@@ -24,6 +24,11 @@ import { DateInputComponent } from './_forms/date-input/date-input.component';
 import { VehicleEditComponent } from './cars/vehicle-edit/vehicle-edit.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { LoadingInterceptor } from './_interceptors/loading.interceptor';
+import { AddRepairComponent } from './repairs/add-repair/add-repair.component';
+import { RepairListComponent } from './repairs/repair-list/repair-list.component';
+import { RepairCardComponent } from './repairs/repair-card/repair-card.component';
+import { RepairEditComponent } from './repairs/repair-edit/repair-edit.component';
+import { RepairDetailsComponent } from './repairs/repair-details/repair-details.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +45,12 @@ import { LoadingInterceptor } from './_interceptors/loading.interceptor';
     AddVehicleComponent,
     TextInputComponent,
     DateInputComponent,
-    VehicleEditComponent
+    VehicleEditComponent,
+    AddRepairComponent,
+    RepairListComponent,
+    RepairCardComponent,
+    RepairEditComponent,
+    RepairDetailsComponent
   ],
   imports: [
     BrowserModule,
