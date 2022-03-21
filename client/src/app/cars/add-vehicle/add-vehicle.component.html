@@ -18,7 +18,7 @@
         </label>
     </div>
 
-    <app-text-input 
+    <app-text-input  
         [formControl]='addVehicleForm.controls["manufacturer"]' 
         [label]='"Manufacturer"'>
     </app-text-input>
@@ -33,7 +33,8 @@
         [label]='"Year of production"'>
     </app-text-input>
 
-    <app-text-input [hidden]='addVehicleForm.value.type === "tractor" || addVehicleForm.value.type === "excavator" || addVehicleForm.value.type === "bike"'
+    <app-text-input 
+        [hidden]='addVehicleForm.value.type === "tractor" || addVehicleForm.value.type === "excavator" || addVehicleForm.value.type === "bike"'
         [formControl]='addVehicleForm.controls["vinNumber"]' 
         [label]='"VIN"'>
     </app-text-input>
@@ -49,13 +50,6 @@
         [label]='"Description"'>
     </app-text-input>
 
-    <!-- <div class="row" *ngIf="validationErrors.length > 0">
-        <ul>
-            <li *ngFor="let error of validationErrors">
-                {{error}}
-            </li>
-        </ul>
-    </div> -->
     <div class="form-group text-center">
         <button [disabled]='!addVehicleForm.valid'
             class="btn btn-success mr-2" 

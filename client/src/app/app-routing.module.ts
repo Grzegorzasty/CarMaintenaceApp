@@ -10,6 +10,7 @@ import { AuthGuard } from './_guards/auth.guard';
 import { AddVehicleComponent } from './cars/add-vehicle/add-vehicle.component';
 import { VehicleEditComponent } from './cars/vehicle-edit/vehicle-edit.component';
 import { PreventUnsavedChangesGuard } from './_guards/prevent-unsaved-changes.guard';
+import { AddRepairComponent } from './repairs/add-repair/add-repair.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -22,6 +23,7 @@ const routes: Routes = [
       {path: 'vehicles/edit/:id', component: VehicleEditComponent, canDeactivate: [PreventUnsavedChangesGuard]},
       {path: 'vehicles/add', component: AddVehicleComponent},
       {path: 'repairs', component: RepairsComponent},
+      {path: 'repair/add', component: AddRepairComponent},
     ]
   },
   {path: 'errors', component: TestErrorsComponent},

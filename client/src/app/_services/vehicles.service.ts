@@ -33,7 +33,7 @@ export class VehiclesService {
 
   }
   updateVehicle(vehicle: VehicleDetails){
-    return this.http.put(this.baseUrl + 'vehicles', vehicle);
+    return this.http.put(this.baseUrl + 'vehicles', vehicle); 
   }
   
   deleteVehicle(id: number)
