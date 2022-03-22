@@ -23,7 +23,7 @@ const routes: Routes = [
       {path: 'vehicles/edit/:id', component: VehicleEditComponent, canDeactivate: [PreventUnsavedChangesGuard]},
       {path: 'vehicles/add', component: AddVehicleComponent},
       {path: 'repairs', component: RepairsComponent},
-      {path: 'repair/add', component: AddRepairComponent},
+      {path: 'vehicles/:id/repair/add', component: AddRepairComponent},
     ]
   },
   {path: 'errors', component: TestErrorsComponent},

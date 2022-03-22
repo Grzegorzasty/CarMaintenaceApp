@@ -21,7 +21,7 @@ namespace API.Controllers
             _mapper = mapper;
         }
 
-        [HttpPost("add")]
+        [HttpPost]
         public async Task<ActionResult<RepairDto>> AddRepair(AddRepairDto addRepairDto)
         {
             var repair = _mapper.Map<Repair>(addRepairDto);

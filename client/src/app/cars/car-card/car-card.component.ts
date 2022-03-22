@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Vehicle } from 'src/app/_models/vehicle';
 import { VehicleDetails } from 'src/app/_models/vehicle_details';
 
@@ -10,7 +11,7 @@ import { VehicleDetails } from 'src/app/_models/vehicle_details';
 export class CarCardComponent implements OnInit {
   @Input() vehicle: Vehicle;
 
-  constructor() { }
+  constructor(public router: Router) { }
 
   ngOnInit(): void {
   }

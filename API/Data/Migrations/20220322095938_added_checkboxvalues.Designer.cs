@@ -3,14 +3,16 @@ using System;
 using API.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace API.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20220322095938_added_checkboxvalues")]
+    partial class added_checkboxvalues
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -76,10 +78,10 @@ namespace API.Data.Migrations
                     b.Property<string>("KeyWords")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("LaborPrice")
+                    b.Property<int>("LaborPrize")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("PartsPrice")
+                    b.Property<int>("PartsPrize")
                         .HasColumnType("INTEGER");
 
                     b.Property<int>("VehicleId")

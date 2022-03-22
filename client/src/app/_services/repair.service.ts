@@ -7,14 +7,14 @@ import { RepairDetails } from '../_models/repair_details';
 @Injectable({
   providedIn: 'root'
 })
-export class VehiclesService {
+export class RepairService {
   
   baseUrl = environment.apiurl;
   
   constructor(private http: HttpClient) {}
 
   async addRepair(newRepair: NewRepair){
-    return await this.http.post<NewRepair>(this.baseUrl + '/repair/add', newRepair).subscribe
+    return await this.http.post<NewRepair>(this.baseUrl + 'repair', newRepair).subscribe
     (
       (val) => {
           console.log(val);

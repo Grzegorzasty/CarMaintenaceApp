@@ -16,7 +16,6 @@ export class AddVehicleComponent implements OnInit {
   model: NewVehicle;
   user: User;
   addVehicleForm: FormGroup;
-  validationErrors: string;
 
   constructor(private accountService: AccountService, private vehicleService: VehiclesService, private fb: FormBuilder, private router: Router)
   {

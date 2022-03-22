@@ -1,23 +1,28 @@
+<h2 class="text-center text-primary">ADD REPAIR</h2>
 <div>
-    <input type="checkbox" value='true' name='engine oil'(change)="keyWordsFill($event)" > Engine oil
-    <input type="checkbox" value='true' name='gearbox oil'(change)="keyWordsFill($event)" class="mt-3 ml-3"> Gearbox oil
-    <input type="checkbox" value='true' class="mt-3 ml-3"> Hydraulic oil
-    <input type="checkbox" value='true' class="mt-3 ml-3"> Engine oil filter
-    <input type="checkbox" value='true' class="mt-3 ml-3"> Gearbox oil filter
-    <input type="checkbox" value='true' class="mt-3 ml-3"> Hydrailic oil filter
-    <input type="checkbox" value='true' class="mt-3 ml-3"> Air filter 
-    <input type="checkbox" value='true' class="mt-3 ml-3"> Cabin filter
-    <input type="checkbox" value='true' class="mt-3 ml-3"> Fuel filter
-    <input type="checkbox" value='true' class="mt-3 ml-3"> Brake pads
-    <input type="checkbox" value='true' class="mt-3 ml-3"> Brake discs
-    <input type="checkbox" value='true' class="mt-3 ml-3"> Brake fluid
-    <input type="checkbox" value='true' class="mt-3 ml-3"> Engine cam
-    <input type="checkbox" value='true' class="mt-3 ml-3"> Coolant
+    <input type="checkbox" name='engine_oil'(change)="keyWordsValuesFill($event)"> Engine oil
+    <input type="checkbox" name='gearbox_oil' class="mt-3 ml-3"(change)="keyWordsValuesFill($event)"> Gearbox oil
+    <input type="checkbox" name='hydraulic_oil' class="mt-3 ml-3"(change)="keyWordsValuesFill($event)"> Hydraulic oil
+    <input type="checkbox" name='engine_oil_filter' class="mt-3 ml-3"(change)="keyWordsValuesFill($event)"> Engine oil filter
+    <input type="checkbox" name='gearbox_oil_filter' class="mt-3 ml-3"(change)="keyWordsValuesFill($event)"> Gearbox oil filter
+    <input type="checkbox" name='hydraulic_oil_filter' class="mt-3 ml-3"(change)="keyWordsValuesFill($event)"> Hydraulic oil filter
+    <input type="checkbox" name='air_filter' class="mt-3 ml-3"(change)="keyWordsValuesFill($event)"> Air filter 
+    <input type="checkbox" name='cabin_filter' class="mt-3 ml-3"(change)="keyWordsValuesFill($event)"> Cabin filter
+    <input type="checkbox" name='fuel_filter' class="mt-3 ml-3"(change)="keyWordsValuesFill($event)"> Fuel filter
+    <input type="checkbox" name='brake_pads' class="mt-3 ml-3"(change)="keyWordsValuesFill($event)"> Brake pads
+    <input type="checkbox" name='brake_discs' class="mt-3 ml-3"(change)="keyWordsValuesFill($event)"> Brake discs
+    <input type="checkbox" name='brake_fluid' class="mt-3 ml-3"(change)="keyWordsValuesFill($event)"> Brake fluid
+    <input type="checkbox" name='engine_cam' class="mt-3 ml-3"(change)="keyWordsValuesFill($event)"> Engine cam
+    <input type="checkbox" name='coolant' class="mt-3 ml-3"(change)="keyWordsValuesFill($event)"> Coolant
 </div>
 <form [formGroup]="addRepairForm" (ngSubmit)="addRepairForm.valid && addRepair()" autocomplete="off">
-    <h2 class="text-center text-primary">ADD REPAIR</h2>
-    <hr>
     
+    <hr>
+    <app-text-input 
+        [formControl]='addRepairForm.controls["dateOfReceipt"]' 
+        [label]='"Date"'
+        [type]='"date"'>
+    </app-text-input>
     <app-text-input 
         [formControl]='addRepairForm.controls["laborPrice"]' 
         [label]='"Labor price"'
@@ -27,7 +32,7 @@
         [formControl]='addRepairForm.controls["partsPrice"]' 
         [label]='"Parts price"'
         [type]='"number"'>
-    </app-text-input>
+    </app-text-input> 
     <app-text-input  
         [formControl]='addRepairForm.controls["keyWords"]' 
         [label]='"Key words"'>
