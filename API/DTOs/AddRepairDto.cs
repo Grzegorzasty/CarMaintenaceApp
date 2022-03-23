@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 using API.Entities;
@@ -8,7 +9,7 @@ namespace API.DTOs
 {
     public class AddRepairDto
     {
-        public DateTime DateOfReceipt { get; set; }
+        public DateTime Date { get; set; }
         public int LaborPrice { get; set; }
         public int PartsPrice { get; set; }
         public string KeyWords { get; set; }

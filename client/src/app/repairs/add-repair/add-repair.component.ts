@@ -12,10 +12,8 @@ import { RepairService } from 'src/app/_services/repair.service';
   styleUrls: ['./add-repair.component.css']
 })
 export class AddRepairComponent implements OnInit {
-  vehicle: CarCardComponent;
   model: NewRepair;
   addRepairForm: FormGroup;
-  validationErrors: string;
   checkBoxValues: string[];
 
   constructor(private repairService: RepairService, private fb: FormBuilder, private route: ActivatedRoute) { }
@@ -28,7 +26,7 @@ export class AddRepairComponent implements OnInit {
 
   initializeForm(){
     this.addRepairForm = this.fb.group({
-    dateOfReceipt: [''],
+    date: [''],
     laborPrice: ['', Validators.required],
     partsPrice: ['', Validators.required],
     keyWords: ['', Validators.maxLength(200)],

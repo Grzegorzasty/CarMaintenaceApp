@@ -1,5 +1,5 @@
 export interface NewRepair{
-    dateOfReceipt: Date,
+    date: Date,
     laborPrice: number,
     partsPrice: number,
     checkBoxValues: string,
