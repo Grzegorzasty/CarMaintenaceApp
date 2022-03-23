@@ -19,11 +19,13 @@ export class CarListComponent implements OnInit {
     this.accountService.currentUser$.pipe(take(1)).subscribe(user => this.user = user);
   }
 
-  ngOnInit(): void{
+  ngOnInit(): void
+  {
     this.loadVehicles();
   }
 
-  loadVehicles(){
+  loadVehicles()
+  {
     this.vehiclesService.getVehicles(this.user.username).subscribe(vehicles => {this.vehicles = vehicles;})
   }
 }

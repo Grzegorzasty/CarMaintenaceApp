@@ -11,6 +11,7 @@ import { AddVehicleComponent } from './cars/add-vehicle/add-vehicle.component';
 import { VehicleEditComponent } from './cars/vehicle-edit/vehicle-edit.component';
 import { PreventUnsavedChangesGuard } from './_guards/prevent-unsaved-changes.guard';
 import { AddRepairComponent } from './repairs/add-repair/add-repair.component';
+import { RepairListComponent } from './repairs/repair-list/repair-list.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -24,6 +25,8 @@ const routes: Routes = [
       {path: 'vehicles/add', component: AddVehicleComponent},
       {path: 'repairs', component: RepairsComponent},
       {path: 'vehicles/:id/repair/add', component: AddRepairComponent},
+      {path: 'vehicles/:id/repairs', component: RepairListComponent},
+
     ]
   },
   {path: 'errors', component: TestErrorsComponent},

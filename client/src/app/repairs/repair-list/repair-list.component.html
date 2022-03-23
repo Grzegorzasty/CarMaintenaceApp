@@ -1,1 +1,3 @@
-<p>repair-list works!</p>
+<div *ngFor="let repair of repairs" class="row">
+    <app-repair-card [repair]="repair"></app-repair-card>
+</div>

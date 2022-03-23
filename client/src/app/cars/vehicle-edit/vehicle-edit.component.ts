@@ -23,7 +23,6 @@ export class VehicleEditComponent implements OnInit {
 
   async ngOnInit(): Promise<void> {
     await this.loadVehicle();
-    console.log(this.vehicleDetails);
     this.initializeForm();
   }
 
