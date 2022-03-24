@@ -15,6 +15,7 @@ export class AddRepairComponent implements OnInit {
   model: NewRepair;
   addRepairForm: FormGroup;
   checkBoxValues: string[];
+  
 
   constructor(private repairService: RepairService, private fb: FormBuilder, private route: ActivatedRoute) { }
 
@@ -39,19 +40,14 @@ export class AddRepairComponent implements OnInit {
   async addRepair(){
     this.addRepairForm.value.checkBoxValues = this.checkBoxValues.toString();
     this.addRepairForm.value.vehicleId = +this.route.snapshot.paramMap.get('id')
-    console.log(this.addRepairForm.value);
     await this.repairService.addRepair(this.addRepairForm.value); 
-
-    // console.log(this.checkBoxValues.toString().split(',').filter((el) => {
-    //   return el !== '';
-    // }))
   }
    keyWordsValuesFill(event){
      if(event.target.checked){
       this.checkBoxValues.push(event.target.name);
      }
      else{
-      delete this.checkBoxValues[this.checkBoxValues.indexOf(event.target.name)];
+       this.checkBoxValues.splice(this.checkBoxValues.indexOf(event.target.name), 1);
      }
    }
 }

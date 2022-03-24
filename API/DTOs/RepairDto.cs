@@ -7,6 +7,7 @@ namespace API.DTOs
 {
     public class RepairDto
     {
+        public int Id { get; set; }
         public DateTime Date { get; set; }
         public int LaborPrice { get; set; }
         public int PartsPrice { get; set; }

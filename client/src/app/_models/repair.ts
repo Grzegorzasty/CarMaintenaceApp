@@ -1,4 +1,5 @@
 export interface Repair {
+    id: number,
     date: Date,
     laborPrice: number,
     partsPrice: number,

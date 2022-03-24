@@ -11,6 +11,7 @@ import { VehiclesService } from 'src/app/_services/vehicles.service';
   styleUrls: ['./vehicle-edit.component.css']
 })
 export class VehicleEditComponent implements OnInit {
+  
   vehicleDetails: VehicleDetails;
   editVehicleForm: FormGroup;
   @HostListener('window:beforeunload', ['$event']) unloadNotification($event: any){

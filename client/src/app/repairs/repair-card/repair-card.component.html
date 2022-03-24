@@ -1,5 +1,8 @@
 <div class="card mb-4">
     <div class="card-body p-1">
-       <h6>{{repair.workshopName}}</h6>
+       <h6>{{repair.id}}</h6>
+    </div>
+    <div class="row">
+        <button class="btn" routerLink="/{{this.router.url}}/{{repair.id}}/edit"><i class="fa fa-edit"></i></button>
     </div>
 </div> 
