@@ -24,6 +24,7 @@ export class RepairService {
       });
   }
   updateRepair(repair: RepairDetails){
+    console.log(repair);
     return this.http.put(this.baseUrl + 'repair', repair);
   }
 

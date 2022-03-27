@@ -20,9 +20,9 @@ export class RepairEditComponent implements OnInit {
   constructor(private fb: FormBuilder, private repairService: RepairService, private route: ActivatedRoute, private toastr: ToastrService) { }
 
   async ngOnInit(): Promise<void> {
+    this.checkBoxValues = [];
     await this.loadRepair();
     this.initializeForm();
-    console.log(this.repairDetails)
   }
 
   async loadRepair(){
@@ -52,12 +52,11 @@ export class RepairEditComponent implements OnInit {
     }
     else{
      this.checkBoxValues.splice(this.checkBoxValues.indexOf(event.target.name), 1);
-
     }
   }
   updateRepair(){
     this.editRepairForm.value.checkBoxValues = this.checkBoxValues.toString();
-    console.log(this.editRepairForm.value)
+    this.repairDetails = this.editRepairForm.value;
     this.repairService.updateRepair(this.repairDetails).subscribe(() => {
       this.toastr.success('Profile updated successfully');
       this.editRepairForm.reset(this.editRepairForm.value);
