@@ -1,25 +1,16 @@
-<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container"> 
-      <a class="navbar-brand" routerLink='/' >CMApp</a>
         
       <ul class="navbar-nav mr-auto" >
         <ng-container *ngIf="accountService.currentUser$ | async">
           <li class="nav-item">
-            <a class="nav-link" routerLink='/vehicles' routerLinkActive='active'>Vehicles</a>
+            <button class="btn success" routerLink='/vehicles'>Vehicles</button>
           </li>
         </ng-container>
       </ul>
-        
-        <div class="dropdown" *ngIf="(accountService.currentUser$ | async) as user" dropdown>
-
-          <a class="dropdown-toggle" dropdownToggle>Welcome {{user.username | titlecase}}</a>
-          
-          <div class="dropdown-menu mt-3" *dropdownMenu>
-            <a class="dropdown-item">Edit Profile</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" (click) = "logout()">Logout</a>
-          </div>
-
+        <div>
+          <button class="btn success" *ngIf="(accountService.currentUser$ | async) as user" (click) = "logout()">Logout</button>
+        </div>
         </div>
         <form *ngIf="(accountService.currentUser$ | async) === null" #loginForm="ngForm" class="d-flex" (ngSubmit)="login()" autocomplete="off">
           <input 
@@ -36,6 +27,6 @@
             placeholder="Password">
           <button class="btn btn-outline-success" type="submit">Login</button>
         </form>
-      </div>
+    
   </nav>
  
