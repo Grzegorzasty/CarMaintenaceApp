@@ -1,6 +1,10 @@
+<div class="container">
   <div *ngFor="let vehicle of vehicles" class="row">
       <app-car-card [vehicle]="vehicle"></app-car-card>
   </div>
   <div class="row">
-    <button class="btn" routerLink="/vehicles/add"><i class="fa fa-plus"></i></button>
+    <button class="btn" routerLink="/vehicles/add">
+      <i class="fa fa-plus text-white"></i>
+    </button>
   </div>
+</div>

@@ -3,7 +3,7 @@
         <h6 class="card-title text-center mb-1">
             <i *ngIf="vehicle.type === 'car'" class="fa fa-car mr-2"></i>
             <i *ngIf="vehicle.type === 'bike'" class="fa fa-motorcycle mr-2"></i>
-            <i *ngIf="vehicle.type === 'tractor'" class="fa-solid fa-tractor mr-2"></i>
+            <i *ngIf="vehicle.type === 'tractor'" class="fa fa-tractor mr-2"></i>
             <i *ngIf="vehicle.type === 'excavator'" class="fa fa-car mr-2"></i>
             
             {{vehicle.manufacturer + " " + vehicle.model}}
@@ -11,12 +11,21 @@
     </div>
     <div class="card-buttons">
         <ul class="list-inline animate text-center">
-            <li class="list-inline-item"><button routerLink="/{{this.router.url}}/{{vehicle.id}}/repairs" class="btn btn">
-                <i class="fa fa-wrench"></i></button></li>
-            <li class="list-inline-item"><button routerLink="/{{this.router.url}}/{{vehicle.id}}/repair/add" class="btn btn">
-                <i class="fa fa-plus"></i></button></li>
-            <li class="list-inline-item"><button routerLink="/{{this.router.url}}/edit/{{vehicle.id}}" class="btn btn">
-                <i class="fa fa-edit"></i></button></li>
+            <li class="list-inline-item">
+                <button routerLink="/{{this.router.url}}/{{vehicle.id}}/repairs" class="btn btn">
+                    <i class="fa fa-wrench"></i>
+                </button>
+            </li>
+            <li class="list-inline-item">
+                <button routerLink="/{{this.router.url}}/{{vehicle.id}}/repair/add" class="btn btn">
+                    <i class="fa fa-plus"></i>
+                </button>
+            </li>
+            <li class="list-inline-item">
+                <button routerLink="/{{this.router.url}}/edit/{{vehicle.id}}" class="btn btn">
+                    <i class="fa fa-edit"></i>
+                </button>
+            </li>
         </ul>
     </div>
 </div> 

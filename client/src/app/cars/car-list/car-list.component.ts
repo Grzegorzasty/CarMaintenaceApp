@@ -24,8 +24,8 @@ export class CarListComponent implements OnInit {
     this.loadVehicles();
   }
 
-  loadVehicles()
+  async loadVehicles()
   {
-    this.vehiclesService.getVehicles(this.user.username).subscribe(vehicles => {this.vehicles = vehicles;})
+    this.vehicles = await this.vehiclesService.getVehicles(this.user.username);
   }
 }

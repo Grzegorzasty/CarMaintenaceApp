@@ -3,19 +3,18 @@
 }
 .btn {
     border: 2px solid;
-    /* background-color: white; */
     color: black;
     font-size: 16px;
     cursor: pointer;
   }
   .success {
     border-color: #cf5424;
+    background-color: #cf542434;
     border-radius: 20px;
     color: white;
   }
   .success:hover {
     background-color: #cf542475;
-    color: white;
   }
   .form-control{
     border: 3px solid;

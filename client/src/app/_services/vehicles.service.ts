@@ -15,9 +15,9 @@ export class VehiclesService {
   
   constructor(private http: HttpClient) {}
 
-  getVehicles(username: string)
+  async getVehicles(username: string)
   {
-     return this.http.get<Vehicle[]>(this.baseUrl + 'vehicles/' + username);    
+     return await this.http.get<Vehicle[]>(this.baseUrl + 'vehicles/' + username).toPromise();    
   }
   async getVehicleDetails(id: number)
   {
