@@ -1,19 +1,19 @@
 <h2 class="text-center text-primary">EDIT REPAIR</h2>
 <div>
-    <input type="checkbox" [checked]="checkBoxes('engine_oil')" name='engine_oil' (change)="keyWordsValuesFill($event)"> Engine oil
-    <input type="checkbox" [checked]="checkBoxes('gearbox_oil')" name='gearbox_oil' class="mt-3 ml-3"(change)="keyWordsValuesFill($event)"> Gearbox oil
-    <input type="checkbox" [checked]="checkBoxes('hydraulic_oil')" name='hydraulic_oil' class="mt-3 ml-3"(change)="keyWordsValuesFill($event)"> Hydraulic oil
-    <input type="checkbox" [checked]="checkBoxes('engine_oil_filter')" name='engine_oil_filter' class="mt-3 ml-3"(change)="keyWordsValuesFill($event)"> Engine oil filter
-    <input type="checkbox" [checked]="checkBoxes('gearbox_oil_filter')" name='gearbox_oil_filter' class="mt-3 ml-3"(change)="keyWordsValuesFill($event)"> Gearbox oil filter
-    <input type="checkbox" [checked]="checkBoxes('hydraulic_oil_filter')" name='hydraulic_oil_filter' class="mt-3 ml-3"(change)="keyWordsValuesFill($event)"> Hydraulic oil filter
-    <input type="checkbox" [checked]="checkBoxes('air_filter')" name='air_filter' class="mt-3 ml-3"(change)="keyWordsValuesFill($event)"> Air filter 
-    <input type="checkbox" [checked]="checkBoxes('cabin_filter')" name='cabin_filter' class="mt-3 ml-3"(change)="keyWordsValuesFill($event)"> Cabin filter
-    <input type="checkbox" [checked]="checkBoxes('fuel_filter')" name='fuel_filter' class="mt-3 ml-3"(change)="keyWordsValuesFill($event)"> Fuel filter
-    <input type="checkbox" [checked]="checkBoxes('brake_pads')" name='brake_pads' class="mt-3 ml-3"(change)="keyWordsValuesFill($event)"> Brake pads
-    <input type="checkbox" [checked]="checkBoxes('brake_discs')" name='brake_discs' class="mt-3 ml-3"(change)="keyWordsValuesFill($event)"> Brake discs
-    <input type="checkbox" [checked]="checkBoxes('brake_fluid')" name='brake_fluid' class="mt-3 ml-3"(change)="keyWordsValuesFill($event)"> Brake fluid
-    <input type="checkbox" [checked]="checkBoxes('engine_cam')" name='engine_cam' class="mt-3 ml-3"(change)="keyWordsValuesFill($event)"> Engine cam
-    <input type="checkbox" [checked]="checkBoxes('coolant')" name='coolant' class="mt-3 ml-3"(change)="keyWordsValuesFill($event)"> Coolant
+    <input type="checkbox" [checked]="checkBoxes('engine_oil')" id='engine_oil' (change)="keyWordsValuesFill($event)"> Engine oil
+    <input type="checkbox" [checked]="checkBoxes('gearbox_oil')" id='gearbox_oil' class="mt-3 ml-3"(change)="keyWordsValuesFill($event)"> Gearbox oil
+    <input type="checkbox" [checked]="checkBoxes('hydraulic_oil')" id='hydraulic_oil' class="mt-3 ml-3"(change)="keyWordsValuesFill($event)"> Hydraulic oil
+    <input type="checkbox" [checked]="checkBoxes('engine_oil_filter')" id='engine_oil_filter' class="mt-3 ml-3"(change)="keyWordsValuesFill($event)"> Engine oil filter
+    <input type="checkbox" [checked]="checkBoxes('gearbox_oil_filter')" id='gearbox_oil_filter' class="mt-3 ml-3"(change)="keyWordsValuesFill($event)"> Gearbox oil filter
+    <input type="checkbox" [checked]="checkBoxes('hydraulic_oil_filter')" id='hydraulic_oil_filter' class="mt-3 ml-3"(change)="keyWordsValuesFill($event)"> Hydraulic oil filter
+    <input type="checkbox" [checked]="checkBoxes('air_filter')" id='air_filter' class="mt-3 ml-3"(change)="keyWordsValuesFill($event)"> Air filter 
+    <input type="checkbox" [checked]="checkBoxes('cabin_filter')" id='cabin_filter' class="mt-3 ml-3"(change)="keyWordsValuesFill($event)"> Cabin filter
+    <input type="checkbox" [checked]="checkBoxes('fuel_filter')" id='fuel_filter' class="mt-3 ml-3"(change)="keyWordsValuesFill($event)"> Fuel filter
+    <input type="checkbox" [checked]="checkBoxes('brake_pads')" id='brake_pads' class="mt-3 ml-3"(change)="keyWordsValuesFill($event)"> Brake pads
+    <input type="checkbox" [checked]="checkBoxes('brake_discs')" id='brake_discs' class="mt-3 ml-3"(change)="keyWordsValuesFill($event)"> Brake discs
+    <input type="checkbox" [checked]="checkBoxes('brake_fluid')" id='brake_fluid' class="mt-3 ml-3"(change)="keyWordsValuesFill($event)"> Brake fluid
+    <input type="checkbox" [checked]="checkBoxes('engine_cam')" id='engine_cam' class="mt-3 ml-3"(change)="keyWordsValuesFill($event)"> Engine cam
+    <input type="checkbox" [checked]="checkBoxes('coolant')" id='coolant' class="mt-3 ml-3"(change)="keyWordsValuesFill($event)"> Coolant
 </div>
 <form [formGroup]="editRepairForm" *ngIf="editRepairForm" (ngSubmit)="editRepairForm.valid && updateRepair()" autocomplete="off">
     

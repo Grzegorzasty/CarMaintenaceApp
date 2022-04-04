@@ -1,0 +1,27 @@
+.bg{
+    width:700px;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 25px;
+    padding-right: 25px;
+    border-radius: 50px;
+}
+.chbox{
+    border: 3px solid;
+    border-color: #cf5424;
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+.checkbox{
+    margin-left: 15px;
+    margin-right: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+label{
+    font-size: 15px;
+}
+.checkbox1{
+    margin-right: 5px;
+}

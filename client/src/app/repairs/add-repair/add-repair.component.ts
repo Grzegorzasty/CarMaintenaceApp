@@ -44,10 +44,10 @@ export class AddRepairComponent implements OnInit {
   }
    keyWordsValuesFill(event){
      if(event.target.checked){
-      this.checkBoxValues.push(event.target.name);
+      this.checkBoxValues.push(event.target.id);
      }
      else{
-       this.checkBoxValues.splice(this.checkBoxValues.indexOf(event.target.name), 1);
+       this.checkBoxValues.splice(this.checkBoxValues.indexOf(event.target.id), 1);
      }
    }
 }

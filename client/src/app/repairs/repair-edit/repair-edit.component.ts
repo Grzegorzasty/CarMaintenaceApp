@@ -30,9 +30,9 @@ export class RepairEditComponent implements OnInit {
     this.date = this.repairDetails.date.toString().slice(0,10);
     this.checkBoxValues = this.repairDetails.checkBoxValues.split(',');
   }
-  checkBoxes(name: string)
+  checkBoxes(id: string)
   {
-    return this.checkBoxValues.includes(name, 0);
+    return this.checkBoxValues.includes(id, 0);
   }
 
   initializeForm(){
@@ -48,10 +48,10 @@ export class RepairEditComponent implements OnInit {
   }
   keyWordsValuesFill(event){
     if(event.target.checked){
-     this.checkBoxValues.push(event.target.name);
+     this.checkBoxValues.push(event.target.id);
     }
     else{
-     this.checkBoxValues.splice(this.checkBoxValues.indexOf(event.target.name), 1);
+     this.checkBoxValues.splice(this.checkBoxValues.indexOf(event.target.id), 1);
     }
   }
   updateRepair(){

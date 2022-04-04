@@ -1,0 +1,26 @@
+.container{
+    width: 600px;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 25px;
+    padding-right: 25px;
+    border-radius: 50px;
+}
+.radio-inline{
+    font-size: 20px;
+}
+.success {
+    border-color: #cf5424;
+    background-color: #cf542434;
+    border-radius: 20px;
+    font-size: 20px;
+    color: white;
+  }
+  .success:hover {
+    background-color: #cf542475;
+  }
+  .btn-danger{
+    font-size: 15px;
+    border-radius: 20px;
+  }

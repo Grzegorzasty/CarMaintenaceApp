@@ -1,10 +1,9 @@
 html,
 body,
-header,
-#intro{
+header{
     height: 100%;
 }
-#intro {
+body {
     background: url("C:\Users\grzeg\CarMaintenanceApp\client\src\assets\background.webp") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
