@@ -21,6 +21,7 @@ namespace API.Helpers
             CreateMap<RepairDetailsDto, Repair>();
             CreateMap<Repair, RepairDto>();
             CreateMap<Repair, RepairDetailsDto>();
+            CreateMap<Photo, PhotoDto>();
         }
     }
 }

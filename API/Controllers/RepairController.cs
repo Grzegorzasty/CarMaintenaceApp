@@ -1,11 +1,11 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using API.DTOs;
 using API.Entities;
 using API.Interfaces;
+using API.Services;
 using AutoMapper;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
@@ -14,10 +14,12 @@ namespace API.Controllers
     {
         private readonly IMapper _mapper;
         private readonly IRepairRepository _repairRepository;
+        private readonly IPhotoService _photoService;
 
-        public RepairController(IMapper mapper, IRepairRepository repairRepository)
+        public RepairController(IMapper mapper, IRepairRepository repairRepository, IPhotoService photoService)
         {
             _repairRepository = repairRepository;
+            _photoService = photoService;
             _mapper = mapper;
         }
 
@@ -57,7 +59,7 @@ namespace API.Controllers
             
             return BadRequest("Failed to update repair");
         }
-        [HttpGet("{id}")]
+        [HttpGet("{id}", Name ="GetRepair")]
         public async Task<ActionResult<RepairDetailsDto>> GetRepairDetailsByIdAsync(int id)
         {
             var repair = await _repairRepository.GetRepairDetailsByIdAsync(id);
@@ -68,6 +70,33 @@ namespace API.Controllers
         {
             var repairs = await _repairRepository.GetRepairsByVehicleIdAsync(id);
             return Ok(repairs);
+        }
+        [HttpPost("{id}/add-photo")]
+        public async Task<ActionResult<PhotoDto>> AddPhoto(IFormFile file, int id)
+        {
+            var repair = await _repairRepository.GetRepairAsync(id);
+
+            var result = await _photoService.AddPhotoAsync(file);
+
+            if(result.Error != null) return BadRequest(result.Error.Message);
+
+            var photo = new Photo
+            {
+                Url = result.SecureUrl.AbsoluteUri,
+                PublicId = result.PublicId
+            };
+            
+            repair.Photos.Add(photo);
+           
+
+            if(await _repairRepository.SaveAllAsync())
+            {
+                //return _mapper.Map<PhotoDto>(photo);
+                
+                return CreatedAtRoute("GetRepair", new {id = repair.Id}, _mapper.Map<PhotoDto>(photo));
+            } 
+
+            return BadRequest("Problem adding photo");
         }
     }
 }

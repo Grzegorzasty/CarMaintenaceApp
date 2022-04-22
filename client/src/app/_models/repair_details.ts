@@ -1,3 +1,5 @@
+import { Photo } from "./photo";
+
 export interface RepairDetails{
     id: number,
     date: Date,
@@ -6,5 +8,6 @@ export interface RepairDetails{
     checkBoxValues: string,
     keyWords: string,
     description: string,
-    workshopName: string
+    workshopName: string,
+    photos: Photo[]
 }

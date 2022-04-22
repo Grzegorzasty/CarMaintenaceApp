@@ -29,6 +29,7 @@ import { RepairListComponent } from './repairs/repair-list/repair-list.component
 import { RepairCardComponent } from './repairs/repair-card/repair-card.component';
 import { RepairEditComponent } from './repairs/repair-edit/repair-edit.component';
 import { RepairDetailsComponent } from './repairs/repair-details/repair-details.component';
+import { PhotoEditorComponent } from './repairs/photo-editor/photo-editor.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { RepairDetailsComponent } from './repairs/repair-details/repair-details.
     RepairListComponent,
     RepairCardComponent,
     RepairEditComponent,
-    RepairDetailsComponent
+    RepairDetailsComponent,
+    PhotoEditorComponent
   ],
   imports: [
     BrowserModule,
