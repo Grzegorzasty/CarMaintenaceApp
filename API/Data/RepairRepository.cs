@@ -30,6 +30,10 @@ namespace API.Data
         {
             _context.Repair.Remove(repair);
         }
+        public void DeletePhoto(Photo photo)
+        {
+            _context.Photo.Remove(photo);
+        }
 
         public void EditRepair(Repair repair)
         {
@@ -53,7 +57,8 @@ namespace API.Data
 
         public async Task<bool> SaveAllAsync()
         {
-           return await _context.SaveChangesAsync() > 0;
+           var xd = await _context.SaveChangesAsync() > 0;
+           return xd;
         }
     }
 }

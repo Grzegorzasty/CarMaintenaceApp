@@ -12,9 +12,11 @@ namespace API.Interfaces
         public void AddRepair(Repair repair);
         public void EditRepair(Repair repair);
         public void DeleteRepair(Repair repair);
+        public void DeletePhoto(Photo photo);
         Task<IEnumerable<RepairDto>> GetRepairsByVehicleIdAsync(int id);
         Task<RepairDetailsDto> GetRepairDetailsByIdAsync(int id);
         Task<Repair> GetRepairAsync(int id);
         Task<bool> SaveAllAsync();
+
     }
 }

@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.Threading.Tasks;
 using API.DTOs;
 using API.Entities;
@@ -90,13 +91,36 @@ namespace API.Controllers
            
 
             if(await _repairRepository.SaveAllAsync())
-            {
-                //return _mapper.Map<PhotoDto>(photo);
-                
+            {   
                 return CreatedAtRoute("GetRepair", new {id = repair.Id}, _mapper.Map<PhotoDto>(photo));
             } 
 
             return BadRequest("Problem adding photo");
+        }
+
+        [HttpDelete("{repairId}/delete-photo/{photoId}")]
+        public async Task<ActionResult> DeletePhoto(int photoId, int repairId){
+            
+            var repair = await _repairRepository.GetRepairDetailsByIdAsync(repairId);
+
+            var photo = repair.Photos.FirstOrDefault(x => x.Id == photoId);
+
+            if(photo == null) return NotFound();
+
+            if(photo.PublicId != null)
+            {   
+                var result = await _photoService.DeletePhotoAsync(photo.PublicId);
+
+                if(result.Error != null) return BadRequest(result.Error.Message);
+            }
+            
+            _repairRepository.DeletePhoto(photo);
+
+            if(await _repairRepository.SaveAllAsync()){
+                return Ok();
+            } 
+
+            return BadRequest("Failed to delete photo");
         }
     }
 }

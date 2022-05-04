@@ -1,6 +1,12 @@
-<div class="row">
-    <div *ngFor="let photo of repairDetails?.photos">
-        <img src="{{photo.url}}" alt="{{photo.url}}" class="img-fluid p-1">
+<div class="container">
+    <div class="row" >
+        <div class="col" *ngFor="let photo of repairDetails?.photos">
+            
+            <img src="{{photo.url}}" alt="{{photo.url}}" class="img-thumbnail">
+            <div class="text-center">
+                <button class="btn btn-danger"><i class="fa fa-trash"></i></button>
+            </div>
+        </div>
     </div>
 </div>
 
