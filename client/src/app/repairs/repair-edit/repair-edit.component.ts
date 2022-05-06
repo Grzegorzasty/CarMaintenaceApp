@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { RepairDetails } from 'src/app/_models/repair_details';
 import { RepairService } from 'src/app/_services/repair.service';
+import { DateTime } from 'luxon';
 
 @Component({
   selector: 'app-repair-edit',
@@ -27,7 +28,7 @@ export class RepairEditComponent implements OnInit {
 
   async loadRepair(){
     this.repairDetails = await this.repairService.getRepairDetailsById(+this.route.snapshot.paramMap.get('id'));
-    this.date = this.repairDetails.date.toString().slice(0,10);
+    this.date = DateTime.fromJSDate(new Date(this.repairDetails.date)).toFormat('dd/MM/yyyy');
     this.checkBoxValues = this.repairDetails.checkBoxValues.split(',');
   }
   checkBoxes(id: string)

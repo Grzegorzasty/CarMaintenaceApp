@@ -1,4 +1,4 @@
-<div class="container bg">
+<div class="container-fluid bg">
 <h2 class="text-center text-white">ADD REPAIR</h2>
 <h5>Service</h5>
 <div class="container chbox">
@@ -22,21 +22,21 @@
     
     <hr>
     <div class="row">
-        <div class="col">
+        <div class="col-md">
             <app-text-input 
                 [formControl]='addRepairForm.controls["date"]' 
                 [label]='"Date"'
                 [type]='"date"'>
             </app-text-input>
         </div>
-        <div class="col">
+        <div class="col-md">
             <app-text-input 
                 [formControl]='addRepairForm.controls["laborPrice"]' 
                 [label]='"Labor price"'
                 [type]='"number"'>
             </app-text-input>
         </div>
-        <div class="col">
+        <div class="col-md">
             <app-text-input 
                 [formControl]='addRepairForm.controls["partsPrice"]' 
                 [label]='"Parts price"'

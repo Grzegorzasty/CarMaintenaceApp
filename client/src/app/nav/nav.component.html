@@ -4,12 +4,12 @@
       <ul class="navbar-nav mr-auto" >
         <ng-container *ngIf="accountService.currentUser$ | async">
           <li class="nav-item">
-            <button class="btn success" routerLink='/vehicles'>Vehicles</button>
+            <button class="btn btn-orange-border" routerLink='/vehicles'>Vehicles</button>
           </li>
         </ng-container>
       </ul>
         <div>
-          <button class="btn success" *ngIf="(accountService.currentUser$ | async) as user" (click) = "logout()">Logout</button>
+          <button class="btn btn-orange-border" *ngIf="(accountService.currentUser$ | async) as user" (click) = "logout()">Logout</button>
         </div>
         </div>
         <form *ngIf="(accountService.currentUser$ | async) === null" #loginForm="ngForm" class="d-flex" (ngSubmit)="login()" autocomplete="off">

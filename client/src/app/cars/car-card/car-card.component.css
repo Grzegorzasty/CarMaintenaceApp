@@ -2,7 +2,6 @@
     transform: scale(1.05, 1.05);
     transition-duration: 500ms;
     transition-timing-function: ease-out;
-    opacity: 0.9;
 }
 
 .card {

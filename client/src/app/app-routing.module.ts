@@ -13,6 +13,7 @@ import { PreventUnsavedChangesGuard } from './_guards/prevent-unsaved-changes.gu
 import { AddRepairComponent } from './repairs/add-repair/add-repair.component';
 import { RepairListComponent } from './repairs/repair-list/repair-list.component';
 import { RepairEditComponent } from './repairs/repair-edit/repair-edit.component';
+import { RepairDetailsComponent } from './repairs/repair-details/repair-details.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -28,6 +29,7 @@ const routes: Routes = [
       {path: 'vehicles/:id/repair/add', component: AddRepairComponent},
       {path: 'vehicles/:id/repairs/:id/edit', component: RepairEditComponent},
       {path: 'vehicles/:id/repairs', component: RepairListComponent},
+      {path: 'vehicles/:id/repairs/:id', component: RepairDetailsComponent},
 
     ]
   },

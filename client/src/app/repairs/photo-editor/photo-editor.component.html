@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container gallery">
     <div class="row" >
         <div class="col" *ngFor="let photo of repairDetails?.photos">
             
@@ -10,7 +10,7 @@
     </div>
 </div>
 
-<div class="container bg">
+<div class="container-fluid bg">
     <div class="row">
         <div class="col">
             <div ng2FileDrop
@@ -23,11 +23,7 @@
             </div>
         </div>
         <div class="col">
-            Multiple
             <input type="file" ng2FileSelect [uploader]="uploader" multiple  /><br/>
-
-            Single
-            <input type="file" ng2FileSelect [uploader]="uploader" />
         </div>
  </div>
     

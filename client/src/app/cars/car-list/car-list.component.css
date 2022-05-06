@@ -1,6 +1,5 @@
 .row{
     margin: auto;
-    width: 350px;
 }
 .btn{
     margin: auto;
@@ -24,10 +23,10 @@
     transition-duration: 300ms;
     transition-timing-function: ease-out;
 }
-.container{
+.container-fluid{
     padding-top: 50px;
     padding-bottom: 50px;
     background-color: rgba(0, 0, 0, 0.5);
-    width:450px;
+    max-width:450px;
     border-radius: 50px;
 }
